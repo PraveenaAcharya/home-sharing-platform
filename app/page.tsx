@@ -22,9 +22,11 @@ export default function HomePage() {
 
   const handleBookingSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!selectedHome) return;
     // In a real app, this would send the booking to a backend
-    alert('Booking successful!');
+    alert(`Booking successful for home ${selectedHome}!`);
     setShowBookingModal(false);
+    setSelectedHome(null);
   };
 
   return (
@@ -77,7 +79,7 @@ export default function HomePage() {
               className="bg-white rounded-lg shadow-md overflow-hidden"
             >
               <div className="relative h-48">
-                <Image
+            <Image
                   src={home.image}
                   alt={home.title}
                   fill

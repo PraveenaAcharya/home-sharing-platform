@@ -22,18 +22,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const login = async (email: string, password: string) => {
+  const login = async (_email: string, _password: string) => {
     // Dummy authentication logic
     const dummyUser: User = {
       id: '1',
-      email,
+      email: _email,
       name: 'John Doe'
     };
     localStorage.setItem('user', JSON.stringify(dummyUser));
     setUser(dummyUser);
   };
 
-  const register = async (name: string, email: string, password: string) => {
+  const register = async (name: string, email: string, _password: string) => {
     // Dummy registration logic
     const dummyUser: User = {
       id: '1',

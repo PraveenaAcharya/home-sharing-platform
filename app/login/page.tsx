@@ -17,7 +17,7 @@ export default function LoginPage() {
     try {
       await login(email, password);
       router.push('/');
-    } catch (err) {
+    } catch {
       setError('Invalid credentials');
     }
   };
@@ -79,7 +79,7 @@ export default function LoginPage() {
         </form>
         <div className="text-center">
           <p className="text-sm text-gray-600">
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <Link href="/register" className="font-medium text-indigo-600 hover:text-indigo-500">
               Register here
             </Link>
